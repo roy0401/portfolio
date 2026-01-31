@@ -97,7 +97,7 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-serif font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-serif font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 pb-2">
             Expertise & Services
           </motion.h2>
 
