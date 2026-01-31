@@ -1,0 +1,71 @@
+{
+  "personal": {
+    "fullName": "Roy",
+    "role": "Software Engineer / Freelance Developer",
+    "location": "Malaysia",
+    "email": "cyrui41@gmail.com",
+    "phone": "+60183944118"
+  },
+
+  "socials": {
+    "github": "https://github.com/roy0401",
+    "linkedin": "https://www.linkedin.com/in/chen-yurui-7aa531318/?originalSubdomain=my"
+  },
+
+  "skills": {
+    "languages": ["TypeScript", "JavaScript", "Solidity", "SQL"],
+    "frameworks": ["Next.js", "React", "Node.js"],
+    "databases": ["MySQL", "PostgreSQL", "SQLite"]
+  },
+
+  "projects": [
+    {
+      "title": "Pokémon Multiplayer Card Game",
+      "description": "A Pokémon-style PvP card battle game with real-time sync.",
+      "techStack": ["Next.js", "WebSocket", "Prisma", "MySQL"],
+      "features": [
+        "Real-time battle synchronization",
+        "Deck validation via server",
+        "Turn-based logic with timers"
+      ],
+      "image": "/assets/images/pokemon.png"
+    },
+    {
+      "title": "TrailGuard",
+      "description": "A mobile-based safety and emergency response system designed to enhance hiker security through real-time location tracking and alert mechanisms.",
+      "techStack": ["Flutter", "Node.js", "Express", "MySQL", "AWS EC2"],
+      "features": [
+        "Real-time hiker location tracking",
+        "Emergency SOS alert system",
+        "Backend API for incident reporting and monitoring",
+        "Cloud deployment with scalable server architecture"
+      ],
+      "image": "/assets/images/hiking.png"
+    }
+  ],
+
+  "education": [
+    {
+      "institution": "Asia Pacific University",
+      "program": "Bachelor of Computer Science",
+      "year": "2022 – 2025"
+    }
+  ],
+
+  "experience": [
+    {
+      "company": "Freelance",
+      "role": "Software Developer",
+      "duration": "2025 – Present",
+      "details": [
+        "Built websites for local businesses",
+        "Handled deployment and maintenance"
+      ]
+    }
+  ],
+
+  "footer": {
+    "copyright": "© 2026 Roy",
+    "builtWith": "Next.js & TypeScript"
+  }
+}

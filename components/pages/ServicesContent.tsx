@@ -17,7 +17,7 @@ export default function Services() {
            className="text-center max-w-3xl mx-auto mb-20"
          >
            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Services</h1>
-           <p className="text-xl text-muted">
+           <p className="text-xl text-muted text-white/60">
              Straightforward web development solutions tailored for your business needs. No hidden fees, no complexity.
            </p>
          </motion.div>
@@ -30,8 +30,8 @@ export default function Services() {
                transition={{ delay: 0.1 }}
                className="md:col-span-2 bg-gradient-to-br from-[#1a1a1a] to-card p-10 rounded-3xl border border-white/5"
             >
-               <h2 className="text-3xl font-serif font-bold mb-4">Website Design & Development</h2>
-               <p className="text-muted text-lg mb-8 max-w-3xl">
+               <h2 className="text-3xl font-serif font-bold mb-4 ">Website Design & Development</h2>
+               <p className="text-muted text-lg mb-8 max-w-3xl text-white/60">
                  I build websites from scratch or redesign existing ones to meet modern standards. My focus is on creating a site that not only looks good but works flawlessly for your customers.
                </p>
 
@@ -48,7 +48,7 @@ export default function Services() {
                      </div>
                      <div>
                        <h3 className="font-semibold text-lg mb-1">{feature.title}</h3>
-                       <p className="text-sm text-muted">{feature.desc}</p>
+                       <p className="text-sm text-muted text-white/60">{feature.desc}</p>
                      </div>
                    </div>
                  ))}
@@ -66,7 +66,7 @@ export default function Services() {
          >
             <p className="text-2xl font-serif text-foreground mb-8">Ready to upgrade your online presence?</p>
             <Link href="/contact">
-               <Button size="lg" className="rounded-full px-10">Start a Project</Button>
+               <Button size="lg" className="rounded-full px-10 text-white/90">Start a Project</Button>
             </Link>
          </motion.div>
       </Section>

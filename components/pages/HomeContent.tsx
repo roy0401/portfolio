@@ -2,9 +2,13 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, CheckCircle2, Briefcase, Utensils, Palette } from "lucide-react";
 import Section from "@/components/Section";
 import { Button } from "@/components/ui/Button";
+import LiquidEther from "@/components/ui/LiquidBackground";
+import TechFloatingIcons from "@/components/ui/TechFloatingIcons";
+import portfolio from "@/data/portfolio.json";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -22,33 +26,62 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  const projectColors = [
+    "bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]",
+    "bg-gradient-to-br from-[#202020] to-[#101010]",
+    "bg-gradient-to-br from-[#151515] to-[#050505]" 
+  ];
+
   return (
-    <div className="flex flex-col">
+    <div className="relative flex flex-col min-h-screen overflow-hidden isolate">
+      <LiquidEther className="!fixed inset-0 -z-10 transition-opacity duration-1000 ease-in-out"
+        colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+        mouseForce={25}
+        cursorSize={90}
+        isViscous
+        viscous={20}
+        iterationsViscous={4}
+        iterationsPoisson={4}
+        resolution={0.2}
+        dt={0.02}
+        isBounce={false}
+        autoDemo
+        autoSpeed={0.3}
+        autoIntensity={1.5}
+        takeoverDuration={0.3}
+        autoResumeDelay={500}
+        autoRampDuration={0.8}
+      />
       {/* Hero Section */}
-      <Section className="min-h-[80vh] flex flex-col justify-center">
+      <Section className="min-h-[85vh] flex flex-col justify-start pt-14 md:pt-20 relative">
         <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-          className="max-w-4xl"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-4xl relative z-10"
         >
-          <motion.p variants={fadeInUp} className="text-primary font-medium tracking-wide border-l-2 border-primary pl-4 mb-6">
-            Software Developer / Freelance Web Developer
-          </motion.p>
-          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold font-serif leading-tight mb-6 text-foreground">
-            I design and build clean, <span className="text-muted-foreground">reliable websites</span> for real businesses.
+          <motion.div variants={fadeInUp} className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-md border border-primary rounded-full px-4 py-2 mb-8">
+            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+             <span className="text-sm font-medium tracking-wide text-white/80">{portfolio.personal.role}</span>
+          </motion.div>
+          
+          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-bold font-serif leading-[1.1] mb-4 text-foreground tracking-tight">
+            Digital 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x pb-1"> experiences</span> that expire the ordinary.
           </motion.h1>
-          <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted max-w-2xl mb-10 leading-relaxed">
-            Helping professionals and businesses establish a premium digital presence with focused, maintainable, and effective web solutions.
+          
+          <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-4 leading-relaxed font-light">
+             Helping brands and visionaries establish a premium digital presence with fluid, effective, and modern web solutions.
           </motion.p>
+          
           <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
             <Link href="/projects">
-              <Button size="lg" className="rounded-full px-8">
+              <Button size="lg" className="rounded-full px-8 bg-white text-black hover:bg-white/90 transition-all duration-300 font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                 View My Work
               </Button>
             </Link>
             <Link href="/contact">
-              <Button variant="outline" size="lg" className="rounded-full px-8">
+              <Button variant="outline" size="lg" className="rounded-full px-8 border-primary hover:bg-white/10 backdrop-blur-sm transition-all duration-300 text-white/90">
                 Contact Me
               </Button>
             </Link>
@@ -57,39 +90,43 @@ export default function Home() {
       </Section>
 
       {/* What I Do Section */}
-      <Section className="bg-card/30">
+      <Section className="relative">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif font-bold mb-12 text-center">
-            What I Do
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-serif font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
+            Expertise & Services
           </motion.h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 title: "Business Websites",
                 description: "Professional, high-converting websites for companies that need to build trust instantly.",
+                icon: <Briefcase size={32} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
               },
               {
                 title: "Restaurant Websites",
                 description: "Elegant, appetizing digital menus and reservation systems that reflect your dining experience.",
+                icon: <Utensils size={32} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
               },
               {
                 title: "Portfolio & Landing Pages",
                 description: "Personal branding sites that highlight your expertise and convert visitors into clients.",
+                icon: <Palette size={32} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
               },
             ].map((service, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-card p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-colors duration-300"
+                className="group p-8 rounded-3xl bg-white/[0.03] backdrop-blur-lg border border-white/10 hover:border-primary/50 transition-all duration-500 hover:bg-white/[0.05] hover:-translate-y-1 shadow-lg shadow-black/20"
               >
-                <h3 className="text-xl font-serif font-semibold mb-4 text-foreground">{service.title}</h3>
-                <p className="text-muted leading-relaxed">{service.description}</p>
+                  <div className="mb-6 bg-white/5 w-16 h-16 rounded-2xl flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500 ">{service.icon}</div>
+                <h3 className="text-2xl font-serif font-semibold mb-4 text-white group-hover:text-secondary transition-colors">{service.title}</h3>
+                <p className="text-white/70 leading-relaxed font-light">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -104,52 +141,55 @@ export default function Home() {
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-          <div className="flex justify-between items-end mb-12">
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif font-bold">
-              Featured Work
+          <div className="flex justify-between items-end mb-16">
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-serif font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 pb-2">
+              Past Projects
             </motion.h2>
             <motion.div variants={fadeInUp}>
-              <Link href="/projects" className="hidden md:flex items-center text-primary font-medium hover:text-white transition-colors">
-                View all projects <ArrowRight size={16} className="ml-2" />
+              <Link href="/projects" className="hidden md:flex items-center text-white/80 text-lg hover:text-primary transition-colors">
+                View all projects <ArrowRight size={20} className="ml-2" />
               </Link>
             </motion.div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-10">
-            {[
-              {
-                title: "DEN Culinary",
-                category: "Website Redesign",
-                description: "A premium digital experience for a high-end culinary brand.",
-                bg: "bg-[#1a1a1a]",
-              },
-              {
-                title: "Arch Studio",
-                category: "Portfolio",
-                description: "Minimalist portfolio for an architecture firm showcasing their best work.",
-                bg: "bg-[#202020]",
-              },
-            ].map((project, index) => (
+            {portfolio.projects.map((project, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
                 className="group cursor-pointer"
               >
-                <div className={`aspect-video rounded-2xl ${project.bg} mb-6 overflow-hidden relative border border-white/5`}>
-                  {/* Placeholder for project image */}
-                  <div className="absolute inset-0 flex items-center justify-center text-muted/20 group-hover:scale-105 transition-transform duration-700">
-                    <span className="text-4xl font-serif opacity-20">{project.title}</span>
-                  </div>
+                <div className={`aspect-video rounded-3xl ${projectColors[index % projectColors.length]} mb-8 overflow-hidden relative border border-white/10 shadow-2xl`}>
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                    {project.image ? (
+                        <Image 
+                            src={project.image} 
+                            alt={project.title} 
+                            fill 
+                            className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" 
+                        />
+                    ) : (
+                        <div className="absolute inset-0 flex items-center justify-center text-white/10 group-hover:scale-105 transition-transform duration-1000 ease-out">
+                            <span className="text-5xl font-serif font-bold tracking-tighter opacity-30 group-hover:opacity-50 transition-opacity">
+                                {project.title.split(' ')[0]}
+                            </span>
+                        </div>
+                    )}
                 </div>
-                <h3 className="text-2xl font-serif font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-sm text-primary mb-2 uppercase tracking-wider font-medium">{project.category}</p>
-                <p className="text-muted">{project.description}</p>
+                <div className="flex justify-between items-start">
+                    <div>
+                        <h3 className="text-3xl font-serif font-bold mb-2 text-white group-hover:text-secondary transition-colors duration-300">{project.title}</h3>
+                        <p className="text-sm text-primary mb-3 uppercase tracking-widest font-semibold">{project.techStack[0]}</p>
+                    </div>
+                 </div>
+                 <p className="text-muted-foreground font-light text-lg">{project.description}</p>
+
               </motion.div>
             ))}
           </div>
           
-           <motion.div variants={fadeInUp} className="mt-10 md:hidden">
-              <Link href="/projects" className="flex items-center text-primary font-medium hover:text-white transition-colors">
+           <motion.div variants={fadeInUp} className="mt-12 md:hidden">
+              <Link href="/projects" className="flex items-center text-white/80 font-medium hover:text-primary transition-colors">
                 View all projects <ArrowRight size={16} className="ml-2" />
               </Link>
             </motion.div>
@@ -157,47 +197,51 @@ export default function Home() {
       </Section>
 
       {/* Why Work With Me */}
-      <Section className="bg-card/30">
+      <Section className="mb-20">
         <motion.div
            initial="hidden"
            whileInView="visible"
            viewport={{ once: true }}
            variants={staggerContainer}
-           className="grid md:grid-cols-2 gap-12 items-center"
+           className="relative rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/5 p-8 md:p-16 overflow-hidden"
         >
-          <div>
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif font-bold mb-6">
-              Why Work With Me?
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-muted mb-8 leading-relaxed">
-              I don't just write code; I provide reliable technical partnership. 
-              My focus is on delivering practical, high-quality solutions that serve your business goals not just today, but for the long term.
-            </motion.p>
-            <ul className="space-y-4">
-              {[
-                "Clear, jargon-free communication",
-                "Practical, business-first solutions",
-                "Uncompromising attention to detail",
-                "Focus on long-term maintainability"
-              ].map((item, index) => (
-                <motion.li key={index} variants={fadeInUp} className="flex items-start">
-                  <CheckCircle2 className="text-primary mr-3 mt-1 shrink-0" size={20} />
-                  <span className="text-foreground/90">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-            <motion.div variants={fadeInUp} className="mt-10">
-               <Link href="/about">
-                <Button variant="outline" className="rounded-full">More About Me</Button>
-              </Link>
-            </motion.div>
+             <div className="absolute top-0 right-0 p-32 bg-primary/20 blur-[80px] rounded-full pointer-events-none" />
+             <div className="absolute bottom-0 left-0 p-32 bg-secondary/10 blur-[80px] rounded-full pointer-events-none" />
+
+            <div className="grid md:grid-cols-2 gap-16 items-center relative z-10">
+              <div>
+                <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-serif font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 pb-2">
+                  Why Work With Me?
+                </motion.h2>
+                <motion.p variants={fadeInUp} className="text-xl text-muted-foreground mb-10 leading-relaxed font-light">
+                  I don't just write code. I provide <span className="text-white font-medium">technical partnership</span>. <br />
+                  Delivering practical, high-quality, and straightforward solutions that grow with you.
+                </motion.p>
+                <ul className="space-y-6">
+                  {[
+                    "Clear, jargon-free communication",
+                    "Practical, business-first solutions",
+                    "Uncompromising attention to detail",
+                    "Long-term maintainability"
+                  ].map((item, index) => (
+                    <motion.li key={index} variants={fadeInUp} className="flex items-start">
+                        <div className="bg-primary/20 p-1 rounded-full mr-4 mt-1">
+                             <CheckCircle2 className="text-primary" size={18} />
+                        </div>
+                      <span className="text-white/90 text-lg font-light">{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+                <motion.div variants={fadeInUp} className="mt-12">
+                   <Link href="/about">
+                    <Button variant="outline" className="rounded-full px-8 py-6 text-lg border-primary text-white/90 hover:bg-white/10 hover:border-white/40 hover:text-white">More About Me</Button>
+                  </Link>
+                </motion.div>
+              </div>
+              <motion.div variants={fadeInUp} className="relative h-[500px] w-full hidden md:block">
+                 <TechFloatingIcons />
+              </motion.div>
           </div>
-          <motion.div variants={fadeInUp} className="bg-gradient-to-br from-card to-background rounded-2xl p-1 border border-white/5 aspect-square relative md:max-w-md mx-auto">
-             {/* Abstract visual or placeholder for profile picture */}
-             <div className="absolute inset-4 border border-primary/20 rounded-xl flex items-center justify-center">
-                 <span className="font-serif text-6xl text-primary/20">Roy.</span>
-             </div>
-          </motion.div>
         </motion.div>
       </Section>
     </div>

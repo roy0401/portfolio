@@ -1,63 +1,47 @@
 @import "tailwindcss";
 
-:root {
-  /* Primary Colors */
-  --color-background: #0F0F0F; /* Charcoal Black */
-  --color-foreground: #F5F2ED; /* Warm Off-White */
-  --color-primary: #C9A86A;    /* Muted Gold */
-  
-  /* Secondary Colors */
-  --color-card: #2A2A2A;       /* Stone Grey */
-  --color-muted: #B8B1A7;      /* Soft Taupe */
-  --color-accent: #3A3F2D;     /* Deep Olive */
-
-  /* Fonts */
+@theme {
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
-}
 
-@theme inline {
-  --color-background: var(--color-background);
-  --color-foreground: var(--color-foreground);
-  --color-primary: var(--color-primary);
-  --color-card: var(--color-card);
-  --color-muted: var(--color-muted);
-  --color-accent: var(--color-accent);
-
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --color-primary: #5227FF;
+  --color-secondary: #FF9FFC;
+  --color-accent: #B19EEF;
+  
+  --color-foreground: #ffffff;
+  --color-background: #050505;
+  --color-muted: #1f1f1f;
+  --color-muted-foreground: #a0a0a0;
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans), sans-serif;
-  overflow-x: hidden;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif), serif;
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
+.animate-gradient-x {
+    background-size: 200% auto;
+    animation: gradient-x 3s ease infinite;
 }
 
-/* Custom Scrollbar for Webkit */
-::-webkit-scrollbar {
-  width: 8px;
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: var(--color-background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-card);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-muted);
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
 }

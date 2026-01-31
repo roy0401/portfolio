@@ -20,7 +20,7 @@ export default function About() {
             <span className="text-muted-foreground">A partner in your success.</span>
           </h1>
           
-          <div className="prose prose-lg prose-invert text-muted">
+          <div className="prose prose-lg prose-invert text-muted text-white/50">
             <p className="mb-6">
               Hello, I'm Roy. I am a software developer transitioning into freelance work with a singular mission: to bring professional, reliable, and high-quality web solutions to real businesses.
             </p>
@@ -36,7 +36,7 @@ export default function About() {
           </div>
 
           <Link href="/contact">
-             <Button className="rounded-full">Let's Discuss Your Project</Button>
+             <Button className="rounded-full text-white/90">Let's Discuss Your Project</Button>
           </Link>
         </motion.div>
       </Section>
