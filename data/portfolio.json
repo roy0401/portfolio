@@ -4,7 +4,8 @@
     "role": "Software Engineer / Freelance Developer",
     "location": "Malaysia",
     "email": "cyrui41@gmail.com",
-    "phone": "+60183944118"
+    "phone": "+60183944118",
+    "profileImage": "/assets/images/imageprofile.jpg"
   },
 
   "socials": {
@@ -13,9 +14,9 @@
   },
 
   "skills": {
-    "languages": ["TypeScript", "JavaScript", "Solidity", "SQL"],
-    "frameworks": ["Next.js", "React", "Node.js"],
-    "databases": ["MySQL", "PostgreSQL", "SQLite"]
+    "languages": ["TypeScript", "JavaScript", "Solidity", "SQL", "C#"],
+    "frameworks": ["Next.js", "React", "Node.js", "ASP.NET", "Entity Framework"],
+    "databases": ["MySQL", "PostgreSQL", "SQLite", "SQL Server"]
   },
 
   "projects": [
@@ -33,14 +34,24 @@
     {
       "title": "TrailGuard",
       "description": "A mobile-based safety and emergency response system designed to enhance hiker security through real-time location tracking and alert mechanisms.",
-      "techStack": ["Flutter", "Node.js", "Express", "MySQL", "AWS EC2"],
+      "techStack": ["Flutter", "Node.js", "Express", "MySQL", "AWS"],
       "features": [
         "Real-time hiker location tracking",
-        "Emergency SOS alert system",
-        "Backend API for incident reporting and monitoring",
+        "Emergency SOS alert system for incident reporting and monitoring",
         "Cloud deployment with scalable server architecture"
       ],
       "image": "/assets/images/hiking.png"
+    },
+    {
+      "title": "Carverse",
+      "description": "A web-based car management and marketplace system developed to allow users to browse, manage, and track car listings with an intuitive interface and structured data handling.",
+      "techStack": ["ASP.NET", "C#", "SQL Server", "Entity Framework", "AWS"],
+      "features": [
+        "Car listing management (add, edit, delete, search)",
+        "Interactive dashboard with car statistics and insights",
+        "Responsive and user-friendly interface"
+      ],
+      "image": "/assets/images/carverse.png"
     }
   ],
 
