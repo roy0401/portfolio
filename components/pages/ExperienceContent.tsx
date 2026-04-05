@@ -88,7 +88,7 @@ export default function ExperienceContent() {
                <div className="flex flex-col md:flex-row justify-start items-start md:items-center mb-6">
                  {/* Logo with black container */}
                  <div className="mt-6 mr-6 md:mt-0 relative w-24 h-24 rounded-2xl overflow-hidden border border-white/10 bg-black flex-shrink-0 shadow-lg shadow-black/50">
-                    <Image src="/assets/images/tech/flutter.png" alt="Bitlab Digital Logo" fill className="object-cover" onClick={() => window.open("https://cat-bounce.com/", "_blank")}/>
+                    <Image src="/assets/images/tech/Flutter.png" alt="Flutter" fill className="object-cover" onClick={() => window.open("https://cat-bounce.com/", "_blank")}/>
                  </div>
                  <div>
                    <h2 className="text-3xl font-serif font-bold mb-2 transition-colors duration-500 group-hover:text-secondary">Freelance Flutter Developer</h2>
