@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, Briefcase, Utensils, Palette } from "lucide-react";
+import { ArrowRight, CheckCircle2, Server, Database, Cpu } from "lucide-react";
 import Section from "@/components/Section";
 import { Button } from "@/components/ui/Button";
 import LiquidEther from "@/components/ui/LiquidBackground";
@@ -66,12 +66,12 @@ export default function Home() {
           </motion.div>
           
           <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-bold font-serif leading-[1.1] mb-4 text-foreground tracking-tight">
-            Digital 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x pb-1"> experiences</span> that expire the ordinary.
+            Building
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x pb-1"> software</span> that solves.
           </motion.h1>
           
           <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-4 leading-relaxed font-light">
-             Helping brands and visionaries establish a premium digital presence with fluid, effective, and modern web solutions.
+             Developer focused on solid backends and smooth apps. Turning complex problems into simple, reliable code.
           </motion.p>
           
           <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
@@ -98,25 +98,25 @@ export default function Home() {
           variants={staggerContainer}
         >
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-serif font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 pb-2">
-            Expertise & Services
+            Technical Focus
           </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Business Websites",
-                description: "Professional, high-converting websites for companies that need to build trust instantly.",
-                icon: <Briefcase size={32} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
+                title: "Backend Architecture",
+                description: "Designing and building robust, fast, and scalable server-side systems and RESTful APIs.",
+                icon: <Server size={32} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
               },
               {
-                title: "Restaurant Websites",
-                description: "Elegant, appetizing digital menus and reservation systems that reflect your dining experience.",
-                icon: <Utensils size={32} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
+                title: "System Integration",
+                description: "Seamlessly connecting third-party services, legacy databases, and modern tools.",
+                icon: <Database size={32} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
               },
               {
-                title: "Portfolio & Landing Pages",
-                description: "Personal branding sites that highlight your expertise and convert visitors into clients.",
-                icon: <Palette size={32} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
+                title: "AI & Modernization",
+                description: "Enhancing existing infrastructure with intelligent capabilities and modernizing codebases.",
+                icon: <Cpu size={32} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
               },
             ].map((service, index) => (
               <motion.div
@@ -166,7 +166,10 @@ export default function Home() {
                             src={project.image} 
                             alt={project.title} 
                             fill 
-                            className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" 
+                            className={`object-cover group-hover:scale-105 transition-transform duration-1000 ease-out ${
+                              project.imagePosition === 'left' ? 'object-left' : 
+                              project.imagePosition === 'right' ? 'object-right' : 'object-center'
+                            }`} 
                         />
                     ) : (
                         <div className="absolute inset-0 flex items-center justify-center text-white/10 group-hover:scale-105 transition-transform duration-1000 ease-out">
@@ -211,18 +214,18 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-16 items-center relative z-10">
               <div>
                 <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-serif font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 pb-2">
-                  Why Work With Me?
+                  Why Hire Me?
                 </motion.h2>
                 <motion.p variants={fadeInUp} className="text-xl text-muted-foreground mb-10 leading-relaxed font-light">
-                  I don't just write code. I provide <span className="text-white font-medium">technical partnership</span>. <br />
-                  Delivering practical, high-quality, and straightforward solutions that grow with you.
+                  I don't just write code. I <span className="text-white font-medium">engineer reliable systems</span>. <br />
+                  Delivering scalable, high-quality, and straightforward software that solves complex problems.
                 </motion.p>
                 <ul className="space-y-6">
                   {[
-                    "Clear, jargon-free communication",
-                    "Practical, business-first solutions",
-                    "Uncompromising attention to detail",
-                    "Long-term maintainability"
+                    "Adaptable to new technologies quickly",
+                    "Strong problem-solving mindset",
+                    "Uncompromising code quality",
+                    "Focus on scalable architecture"
                   ].map((item, index) => (
                     <motion.li key={index} variants={fadeInUp} className="flex items-start">
                         <div className="bg-primary/20 p-1 rounded-full mr-4 mt-1">

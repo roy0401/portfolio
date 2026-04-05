@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -21,8 +23,9 @@ const Navbar = () => {
   const navLinks = [
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    // { name: "Services", href: "/services" },
+    { name: "Experience", href: "/experience" },
+    // { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -38,16 +41,25 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 relative group"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full" />
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "text-sm font-medium transition-colors duration-300 relative group",
+                  isActive ? "text-secondary" : "text-white/70 hover:text-white"
+                )}
+              >
+                {link.name}
+                <span className={cn(
+                  "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300",
+                  isActive ? "w-full" : "w-0 group-hover:w-full"
+                )} />
+              </Link>
+            );
+          })}
           <Link
             href="/contact"
             className="px-6 py-2 bg-white/10 text-white rounded-full text-sm font-medium hover:bg-white/20 border border-white/5 backdrop-blur-lg transition-all duration-300 hover:scale-105"
@@ -75,16 +87,22 @@ const Navbar = () => {
             className="md:hidden bg-black/90 backdrop-blur-xl border-t border-white/10 absolute top-full w-full left-0"
           >
             <div className="flex flex-col p-6 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-white/70 hover:text-white transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "text-lg font-medium transition-colors",
+                      isActive ? "text-primary" : "text-white/70 hover:text-white"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}

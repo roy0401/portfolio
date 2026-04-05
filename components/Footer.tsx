@@ -10,8 +10,7 @@ const Footer = () => {
           <div>
             <h2 className="text-3xl font-serif font-bold mb-6 text-white">{portfolio.personal.fullName}</h2>
             <p className="text-white/60 max-w-sm mb-8 font-light leading-relaxed">
-              Building reliable, well-designed digital solutions for real businesses.
-              Focused on long-term maintainability and clear communication.
+              Just a developer turning ideas into solid, reliable software. Always learning, always building.
             </p>
             <div className="flex space-x-6">
               {portfolio.socials.github && (
