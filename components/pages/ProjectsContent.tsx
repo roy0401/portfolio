@@ -46,7 +46,10 @@ export default function Projects() {
                             src={project.image} 
                             alt={project.title} 
                             fill 
-                            className="object-cover" 
+                            className={`object-cover ${
+                              project.imagePosition === 'left' ? 'object-left' : 
+                              project.imagePosition === 'right' ? 'object-right' : 'object-center'
+                            }`} 
                         />
                    ) : (
                        <h3 className="text-4xl font-serif font-bold text-white/10">{project.title}</h3>

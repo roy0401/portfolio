@@ -14,8 +14,8 @@
   },
 
   "skills": {
-    "languages": ["TypeScript", "JavaScript", "Solidity", "SQL", "C#"],
-    "frameworks": ["Next.js", "React", "Node.js", "ASP.NET", "Entity Framework"],
+    "languages": ["TypeScript", "JavaScript", "Java", "Solidity", "SQL", "C#"],
+    "frameworks": ["Spring Boot", "Angular", "Next.js", "React", "Node.js", "ASP.NET", "RabbitMQ"],
     "databases": ["MySQL", "PostgreSQL", "SQLite", "SQL Server"]
   },
 
@@ -23,35 +23,50 @@
     {
       "title": "Pokémon Multiplayer Card Game",
       "description": "A Pokémon-style PvP card battle game with real-time sync.",
-      "techStack": ["Next.js", "WebSocket", "Prisma", "MySQL"],
+      "techStack": ["Next.js", "Node.js", "WebSocket", "Prisma", "MySQL"],
       "features": [
         "Real-time battle synchronization",
         "Deck validation via server",
         "Turn-based logic with timers"
       ],
-      "image": "/assets/images/pokemon.png"
+      "image": "/assets/images/projects/pokemon.png",
+      "imagePosition": "center"
     },
     {
       "title": "TrailGuard",
       "description": "A mobile-based safety and emergency response system designed to enhance hiker security through real-time location tracking and alert mechanisms.",
-      "techStack": ["Flutter", "Node.js", "Express", "MySQL", "AWS"],
+      "techStack": ["Flutter", "Node.js", "WebSocket", "MongoDB", "AWS"],
       "features": [
         "Real-time hiker location tracking",
         "Emergency SOS alert system for incident reporting and monitoring",
         "Cloud deployment with scalable server architecture"
       ],
-      "image": "/assets/images/hiking.png"
+      "image": "/assets/images/projects/hiking.png",
+      "imagePosition": "center"
     },
     {
       "title": "Carverse",
       "description": "A web-based car management and marketplace system developed to allow users to browse, manage, and track car listings with an intuitive interface and structured data handling.",
-      "techStack": ["ASP.NET", "C#", "SQL Server", "Entity Framework", "AWS"],
+      "techStack": ["ASP.NET", "C#", "PostgreSQL", "Entity Framework", "AWS"],
       "features": [
         "Car listing management (add, edit, delete, search)",
         "Interactive dashboard with car statistics and insights",
         "Responsive and user-friendly interface"
       ],
-      "image": "/assets/images/carverse.png"
+      "image": "/assets/images/projects/carverse.png",
+      "imagePosition": "center"
+    },
+    {
+      "title": "Self-learn Spring Boot",
+      "description": "A self-learning project demonstrating a Spring Boot backend and Angular frontend, with RabbitMQ for message queue.",
+      "techStack": ["Spring Boot", "Angular", "RabbitMQ", "Java", "MySQL"],
+      "features": [
+        "Asynchronous message queuing using RabbitMQ for decoupled services",
+        "Data visualization on a reactive Angular dashboard",
+        "Secured backend APIs with JWT Bearer Token Authentication"
+      ],
+      "image": "/assets/images/projects/springboot.png",
+      "imagePosition": "left"
     }
   ],
 

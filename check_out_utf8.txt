@@ -1,0 +1,1 @@
+﻿node_modules/next/dist/client/image-component.d.ts(1,8): error TS1259: Module '"C:/Users/Roy/Desktop/me/myProject/portfolio/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
