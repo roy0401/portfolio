@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import Section from "@/components/Section";
 import { Code, Database, Server, Cpu, Users } from "lucide-react";
 import Image from "next/image";
-import { people_v1 } from "googleapis";
-import { url } from "inspector";
 
 export default function ExperienceContent() {
   return (
